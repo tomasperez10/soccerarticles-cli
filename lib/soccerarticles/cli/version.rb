@@ -1,4 +1,4 @@
-module Soccerarticles
+module SoccerArticles
   module Cli
     VERSION = "0.1.0"
   end

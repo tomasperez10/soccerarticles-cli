@@ -1,4 +1,4 @@
-class SoccerArticles::Article
+class SoccerArticles
   
   attr_accessor :name, :country, :url_spain, :url_england, :url_france, :url_italy, :url_germany
   

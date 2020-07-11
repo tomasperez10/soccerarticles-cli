@@ -5,7 +5,7 @@ require "soccerarticles/cli/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "soccerarticles-cli"
-  spec.version       = Soccerarticles::Cli::VERSION
+  spec.version       = SoccerArticles::Cli::VERSION
   spec.authors       = ["'Tomas Perez'"]
   spec.email         = ["'tomasitopg6@gmail.com'"]
 
@@ -38,4 +38,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rspec"
+  
+  spec.add_dependency "nokogiri"
 end

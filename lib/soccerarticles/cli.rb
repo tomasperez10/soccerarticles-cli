@@ -55,23 +55,23 @@ class SoccerArticles::CLI
   end
   
   def spain
-    SoccerArticles::Article.find_url_spain
+    SoccerArticles.find_url_spain
   end
   
   def england
-    SoccerArticles::Article.find_url_england
+    SoccerArticles.find_url_england
   end
   
   def france
-    SoccerArticles::Article.find_url_france
+    SoccerArticles.find_url_france
   end
   
   def italy
-    SoccerArticles::Article.find_url_italy
+    SoccerArticles.find_url_italy
   end
   
   def germany
-    SoccerArticles::Article.find_url_germany
+    SoccerArticles.find_url_germany
   end
   
   
