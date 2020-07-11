@@ -1,22 +1,17 @@
 class SoccerArticles::Article
   
-  attr_accessor :name, :league, :url, :website_url
+  attr_accessor :name, :country, :url_spain, :url_england, :url_france, :url_italy, :url_germany
   
   @@all = []
   
-  def self.new_from_index_page(article)
-    self.new(
-      article.css("h2").text,
-      "https://www.soccerarticles.com#{article.attribute("href").text}",
-      article.css("p")[1].text,
-      article.css(".position").text
-      )
-  end
-  
-  def initialize(name=nil, url=nil, league=nil)
+  def initialize(name=nil, country=nil)
     @name = name
-    @url = url
-    @league = league
+    @country = country
+    @url_spain = SoccerArticles::ScraperSpain.new
+    @url_england = SoccerArticles::ScraperEngland.new
+    @url_france = SoccerArticles::ScraperFrance.new
+    @url_italy = SoccerArticles::ScraperItaly.new
+    @url_germany = SoccerArticles::ScraperGermany.new
     @@all << self
   end
   
@@ -24,12 +19,25 @@ class SoccerArticles::Article
     @@all
   end
   
-  def website_url
-    @website_url ||= doc.css("a.website").attr("href").value
+  def find_url_spain
+    @find_url_spain ||= Nokogiri::HTML(open(self.url_spain))
   end
   
-  def doc
-    @doc ||= Nokogiri::HTML(open(self.url))
+  def find_url_england
+    @find_url_england ||= Nokogiri::HTML(open(self.url_england))
   end
+  
+  def find_url_france
+    @find_url_france ||= Nokogiri::HTML(open(self.url_france))
+  end
+  
+  def find_url_italy
+    @find_url_italy ||= Nokogiri::HTML(open(self.url_italy))
+  end
+  
+  def find_url_germany
+    @find_url_germany ||= Nokogiri::HTML(open(self.url_germany))
+  end
+    
   
 end
