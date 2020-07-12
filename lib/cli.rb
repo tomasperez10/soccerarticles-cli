@@ -1,16 +1,6 @@
 
 class CLI
 
-  # attr_accessor :path_spain, :path_england, :path_france, :path_italy, :path_germany
-  #
-  # def initialize(path_spain, path_england, path_france, path_italy, path_germany)
-  #   @path_spain = path_spain
-  #   @path_england = path_england
-  #   @path_france = path_france
-  #   @path_italy = path_italy
-  #   @path_germany = path_germany
-  # end
-
   def call
 
       puts "Welcome to the top 10 soccer players of all time!"
@@ -26,10 +16,46 @@ class CLI
 
     if input == "y"
       Scraper.new.scrape_index
+
+      after_input
     elsif input == "n"
       exit
     else
-      "Invalid"
+      puts "Invalid"
+    end
+  end
+
+  def after_input
+    puts ""
+    puts "Type in a player's name to find out what country they played/play for in international competitions!"
+
+    puts ""
+    puts "Remember: do not copy the exact format that was listed for the command to work! (Ex: Type in 'Eusebio' instead of '10_Eusebio')"
+
+    input = gets.strip.to_s
+
+    if input == "Eusebio"
+      BestPlayers.new.country("Portugal")
+    elsif input == "Gerd Muller"
+      BestPlayers.new.country("Germany")
+    elsif input == "Franz Beckenbauer"
+      BestPlayers.new.country("Germany")
+    elsif input == "Alfredo Di Stefano"
+      BestPlayers.new.country("Argentina and Spain")
+    elsif input == "Johan Cruyff"
+      BestPlayers.new.country("Netherlands")
+    elsif input == "Cristiano Ronaldo"
+      BestPlayers.new.country("Portugal")
+    elsif input == "Zinedine Zidane"
+      BestPlayers.new.country("France")
+    elsif input == "Diego Maradona"
+      BestPlayers.new.country("Argentina")
+    elsif input == "Lionel Messi"
+      BestPlayers.new.country("Argentina")
+    elsif input == "Pele"
+      BestPlayers.new.country("Brazil")
+    else
+      puts "Invalid"
     end
   end
 

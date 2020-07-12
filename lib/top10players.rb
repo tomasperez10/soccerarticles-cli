@@ -1,12 +1,11 @@
 class BestPlayers
 
-  attr_accessor :name, :url
+  attr_accessor :name
 
   @@all = []
 
-  def initialize(name=nil, url=nil)
+  def initialize(name=nil)
     @name = name
-    @url = url
     @@all << self
   end
 
@@ -14,12 +13,8 @@ class BestPlayers
     @@all
   end
 
-  def self.find(id)
-    self.all[id-1]
-  end
-
-  def doc
-    @doc ||= Nokogiri::HTML(open(self.url))
+  def country(string)
+    puts string
   end
 
 end

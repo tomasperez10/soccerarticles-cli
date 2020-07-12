@@ -8,15 +8,12 @@ class Scraper
   end
 
   def scrape_index
-
     output = []
     self.get_page.css("h3 > span[id]").each {|h3|
 
       output << h3.values
 
      }
-
      puts output.join.split("ez-toc-section") [0..10]
   end
 end
-#self.get_page.css("h3").each {|h3|
