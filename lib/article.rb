@@ -1,25 +1,26 @@
-# class SoccerArticles
+class SoccerArticles
 #
 #   puts "Hello World"
 #
-#   attr_accessor :name, :country, :url_spain, :url_england, :url_france, :url_italy, :url_germany
+  attr_accessor :name
+  #, :country, :url_spain, :url_england, :url_france, :url_italy, :url_germany
 #
-#   @@all = []
+  @@all = []
 #
-#   def initialize(name=nil, country=nil)
-#     @name = name
+  def initialize(name)
+    @name = name
 #     @country = country
 #     @url_spain = ScraperSpain.new
 #     @url_england = ScraperEngland.new
 #     @url_france = ScraperFrance.new
 #     @url_italy = ScraperItaly.new
 #     @url_germany = ScraperGermany.new
-#     @@all << self
-#   end
+    @@all << self
+  end
 #
-#   def self.all
-#     @@all
-#   end
+  def self.all
+    @@all
+  end
 #
 #   def url_spain
 #     @url_spain
@@ -61,5 +62,5 @@
 #     @find_url_germany ||= Nokogiri::HTML(open(self.url_germany))
 #   end
 #
-# 
-# end
+#
+end

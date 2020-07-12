@@ -17,52 +17,39 @@ class CLI
 
       puts ""
 
-      puts "To find a soccer news article for Spain's first division, La Liga Santander, enter 'Spain'."
+      puts "To find a soccer news article for Spain's first division, La Liga Santander, enter '1'."
 
       puts ""
 
-      puts "To find a soccer news article for England's first division, Premier League, enter 'England'."
+      puts "To find a soccer news article for England's first division, Premier League, enter '2'."
 
       puts ""
 
-      puts "To find a soccer news article for France's first division, Ligue 1 Uber Eats, enter 'France'."
+      puts "To find a soccer news article for France's first division, Ligue 1 Uber Eats, enter '3'."
 
       puts ""
 
-      puts "To find a soccer news article for Italy's first division, Serie A TIM, enter 'Italy'."
+      puts "To find a soccer news article for Italy's first division, Serie A TIM, enter '4'."
 
       puts ""
 
-      puts "To find a soccer news article for Germany's first division, Bundesliga, enter 'Germany'."
+      puts "To find a soccer news article for Germany's first division, Bundesliga, enter '5'."
 
       start
-
-      # case input
-      #   when "Spain"
-      #     spain
-      #   when "England"
-      #     england
-      #   when "France"
-      #     france
-      #   when "Italy"
-      #     italy
-      #   when "Germany"
-      #     germany
-      # end
   end
 
   def start
-    input = gets.strip
+    input = gets.strip.to_i
 
-    if input == "Spain"
+    if input == "1"
       spain
-    elsif input == "England"
+    elsif input == "2"
       england
-    elsif input == "France"
+    elsif input == "3"
       france
-    elsif input == "Italy"
+    elsif input == "4"
       italy
-    elsif input == "Germany"
+    elsif input == "5"
       germany
     else
       "Invalid"
