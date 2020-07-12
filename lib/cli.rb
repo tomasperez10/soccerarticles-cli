@@ -13,47 +13,24 @@ class CLI
 
   def call
 
-      puts "Welcome to the top 10 soccer players of all time database!"
+      puts "Welcome to the top 10 soccer players of all time!"
 
       start
   end
 
   def start
-    input = gets.strip.to_i
+    puts ""
+    puts "Would you like to find out who the top 10 soccer players are? Enter Y for 'yes' or N for 'no'."
 
-    if input == "1"
-      spain
-    elsif input == "2"
-      england
-    elsif input == "3"
-      france
-    elsif input == "4"
-      italy
-    elsif input == "5"
-      germany
+    input = gets.strip.downcase
+
+    if input == "y"
+      Scraper.new.scrape_index
+    elsif input == "n"
+      exit
     else
       "Invalid"
     end
-  end
-
-  def spain
-    ScraperSpain.new.get_page
-  end
-
-  def england
-    ScraperEngland.new.get_page
-  end
-
-  def france
-    ScraperFrance.new.get_page
-  end
-
-  def italy
-    ScraperItaly.new.get_page
-  end
-
-  def germany
-    ScraperGermany.new.get_page
   end
 
 

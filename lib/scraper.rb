@@ -8,15 +8,15 @@ class Scraper
   end
 
   def scrape_index
-    self.get_page.css("h3 > span[id]").each {|h3|
-      puts h3.values
-    }
-  end
 
-  def make_players
-    scrape_index.each do |h|
-      BestPlayers.new_from_index(h)
-    end
+    output = []
+    self.get_page.css("h3 > span[id]").each {|h3|
+
+      output << h3.values
+
+     }
+
+     puts output.join.split("ez-toc-section") [0..10]
   end
 end
 #self.get_page.css("h3").each {|h3|
