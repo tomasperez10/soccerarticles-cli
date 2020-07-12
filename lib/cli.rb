@@ -13,27 +13,7 @@ class CLI
 
   def call
 
-      puts "Welcome to the soccer article database, where you can freely find news about soccer from the most well-known source of different countries!"
-
-      puts ""
-
-      puts "To find a soccer news article for Spain's first division, La Liga Santander, enter '1'."
-
-      puts ""
-
-      puts "To find a soccer news article for England's first division, Premier League, enter '2'."
-
-      puts ""
-
-      puts "To find a soccer news article for France's first division, Ligue 1 Uber Eats, enter '3'."
-
-      puts ""
-
-      puts "To find a soccer news article for Italy's first division, Serie A TIM, enter '4'."
-
-      puts ""
-
-      puts "To find a soccer news article for Germany's first division, Bundesliga, enter '5'."
+      puts "Welcome to the top 10 soccer players of all time database!"
 
       start
   end

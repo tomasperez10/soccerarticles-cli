@@ -1,12 +1,22 @@
-class SoccerArticles
+class BestPlayers
 #
 #   puts "Hello World"
 #
-  attr_accessor :name
+  attr_accessor :name, :url, 
   #, :country, :url_spain, :url_england, :url_france, :url_italy, :url_germany
 #
   @@all = []
-#
+
+
+  def self.new_from_index(h)
+    self.new(
+    h.css("h3").text,
+    "https://sportsshow.net/greatest-soccer-players/#{h.attribute("id").text}",
+    # h.css("span")[1].text,
+    # h.css(".ez-toc-section").text
+    )
+  end
+
   def initialize(name)
     @name = name
 #     @country = country
