@@ -1,5 +1,5 @@
-# module SoccerArticles
-#   module Cli
-#     VERSION = "0.1.0"
-#   end
-# end
+module SoccerArticles
+  module CLI
+     VERSION = "0.1.0"
+   end
+ end
