@@ -1,15 +1,14 @@
-require "soccerarticles/cli/version"
 
-class SoccerArticles::CLI
+class CLI
   
   attr_accessor :path_spain, :path_england, :path_france, :path_italy, :path_germany
   
   def initialize(path_spain, path_england, path_france, path_italy, path_germany)
-    @path_spain = SoccerArticles::ScraperSpain.new.url_spain
-    @path_england = SoccerArticles::ScraperEngland.new.url_england
-    @path_france = SoccerArticles::ScraperFrance.new.url_france
-    @path_italy = SoccerArticles::ScraperItaly.new.url_italy
-    @path_germany = SoccerArticles::ScraperGermany.new.url_germany
+    @path_spain = ScraperSpain.new.url_spain
+    @path_england = ScraperEngland.new.url_england
+    @path_france = ScraperFrance.new.url_france
+    @path_italy = ScraperItaly.new.url_italy
+    @path_germany = ScraperGermany.new.url_germany
   end
   
   def call

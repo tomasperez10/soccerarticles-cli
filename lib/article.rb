@@ -7,11 +7,11 @@ class SoccerArticles
   def initialize(name=nil, country=nil)
     @name = name
     @country = country
-    @url_spain = SoccerArticles::ScraperSpain.new
-    @url_england = SoccerArticles::ScraperEngland.new
-    @url_france = SoccerArticles::ScraperFrance.new
-    @url_italy = SoccerArticles::ScraperItaly.new
-    @url_germany = SoccerArticles::ScraperGermany.new
+    @url_spain = ScraperSpain.new
+    @url_england = ScraperEngland.new
+    @url_france = ScraperFrance.new
+    @url_italy = ScraperItaly.new
+    @url_germany = ScraperGermany.new
     @@all << self
   end
   
