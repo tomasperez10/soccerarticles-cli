@@ -4,8 +4,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "soccerarticles/cli/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "soccerarticles-cli"
-  spec.version       = SoccerArticles::Cli::VERSION
+  spec.name          = "top10soccerplayers-cli"
+  spec.version       = Top10SoccerPlayers::Cli::VERSION
   spec.authors       = ["'Tomas Perez'"]
   spec.email         = ["'tomasitopg6@gmail.com'"]
 
