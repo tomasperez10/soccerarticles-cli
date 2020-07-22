@@ -35,25 +35,25 @@ class CLI
     input = gets.strip.to_s
 
     if input == "Eusebio"
-      puts BestPlayers.new.description[0]
+      puts BestPlayers.new.description.join("")[0..244]
     elsif input == "Gerd Muller"
-      puts BestPlayers.new.description[1]
+      puts BestPlayers.new.description.join("")[245..613]
     elsif input == "Franz Beckenbauer"
-      puts BestPlayers.new.description[2]
+      puts BestPlayers.new.description.join("")[614..908]
     elsif input == "Alfredo Di Stefano"
-      puts BestPlayers.new.description[3]
+      puts BestPlayers.new.description.join("")[909..1161]
     elsif input == "Johan Cruyff"
-      puts BestPlayers.new.description[4]
+      puts BestPlayers.new.description.join("")[1162..1513]
     elsif input == "Cristiano Ronaldo"
-      puts BestPlayers.new.description[5]
+      puts BestPlayers.new.description.join("")[1514..1909]
     elsif input == "Zinedine Zidane"
-      puts BestPlayers.new.description[6]
+      puts BestPlayers.new.description.join("")[1910..2314]
     elsif input == "Diego Maradona"
-      puts BestPlayers.new.description[7]
+      puts BestPlayers.new.description.join("")[2315..2606]
     elsif input == "Lionel Messi"
-      puts BestPlayers.new.description[8]
+      puts BestPlayers.new.description.join("")[2607..2999]
     elsif input == "Pele"
-      puts BestPlayers.new.description[9]
+      puts BestPlayers.new.description.join("")[3000..3300]
     else
       puts "Invalid"
     end

@@ -1,13 +1,15 @@
 class BestPlayers
 
-  attr_accessor :name
-
   @@all = []
 
-  def initialize(name, description)
-    @name = Scraper.new.scrape_names
+  def initialize(name=nil, description=nil)
+    @name = []
     @description = []
     @@all << self
+  end
+
+  def name
+    @name << Scraper.new.scrape_names
   end
 
   def description
