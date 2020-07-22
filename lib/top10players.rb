@@ -4,17 +4,18 @@ class BestPlayers
 
   @@all = []
 
-  def initialize(name=nil)
-    @name = name
+  def initialize(name, description)
+    @name = Scraper.new.scrape_names
+    @description = []
     @@all << self
+  end
+
+  def description
+    @description << Scraper.new.scrape_description
   end
 
   def self.all
     @@all
-  end
-
-  def country(string)
-    puts string
   end
 
 end

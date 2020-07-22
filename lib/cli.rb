@@ -15,7 +15,7 @@ class CLI
     input = gets.strip.downcase
 
     if input == "y"
-      Scraper.new.scrape_index
+      puts BestPlayers.new.name
 
       after_input
     elsif input == "n"
@@ -27,7 +27,7 @@ class CLI
 
   def after_input
     puts ""
-    puts "Type in a player's name to find out what country they played/play for in international competitions!"
+    puts "Type in a player's name to learn more about their career!"
 
     puts ""
     puts "Remember: do not copy the exact format that was listed for the command to work! (Ex: Type in 'Eusebio' instead of '10_Eusebio')"
@@ -35,25 +35,25 @@ class CLI
     input = gets.strip.to_s
 
     if input == "Eusebio"
-      BestPlayers.new.country("Portugal")
+      puts BestPlayers.new.description[0]
     elsif input == "Gerd Muller"
-      BestPlayers.new.country("Germany")
+      puts BestPlayers.new.description[1]
     elsif input == "Franz Beckenbauer"
-      BestPlayers.new.country("Germany")
+      puts BestPlayers.new.description[2]
     elsif input == "Alfredo Di Stefano"
-      BestPlayers.new.country("Argentina and Spain")
+      puts BestPlayers.new.description[3]
     elsif input == "Johan Cruyff"
-      BestPlayers.new.country("Netherlands")
+      puts BestPlayers.new.description[4]
     elsif input == "Cristiano Ronaldo"
-      BestPlayers.new.country("Portugal")
+      puts BestPlayers.new.description[5]
     elsif input == "Zinedine Zidane"
-      BestPlayers.new.country("France")
+      puts BestPlayers.new.description[6]
     elsif input == "Diego Maradona"
-      BestPlayers.new.country("Argentina")
+      puts BestPlayers.new.description[7]
     elsif input == "Lionel Messi"
-      BestPlayers.new.country("Argentina")
+      puts BestPlayers.new.description[8]
     elsif input == "Pele"
-      BestPlayers.new.country("Brazil")
+      puts BestPlayers.new.description[9]
     else
       puts "Invalid"
     end
