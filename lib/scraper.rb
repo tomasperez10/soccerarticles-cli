@@ -13,7 +13,7 @@ class Scraper
 
     self.get_page.css("h3 > span[id]").each.with_index(0) {|h3, index|
       description = descriptions[index]
-      name = h3.values[1].gsub(/[0-9]|10_/,"")
+      name = h3.values[1].gsub(/[0-9]|10|_/," ")
       BestPlayers.new(name, description)
 
      }
