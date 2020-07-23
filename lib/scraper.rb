@@ -8,23 +8,24 @@ class Scraper
   end
 
   def scrape_names
-    names = []
+    #names = []
+    descriptions = self.scrape_description
 
-    names << self.get_page.css("h3 > span[id]").each {|h3|
-
-      names << h3.values
+    self.get_page.css("h3 > span[id]").each.with_index(0) {|h3, index|
+      description = descriptions[index]
+      name = h3.values[1].gsub(/[0-9]|10_/,"")
+      BestPlayers.new(name, description)
 
      }
-     names.join.split("ez-toc-section") [1..10]
+     #names.join.split("ez-toc-section") [1..10]
+     BestPlayers.all.pop
   end
 
   def scrape_description
 
-    description = []
+    #description = []
 
-    description << self.get_page.css("figure+p").map(&:text)
-
-    description
+    description = self.get_page.css("figure+p").map(&:text)
 
   end
 end

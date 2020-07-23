@@ -9,13 +9,16 @@ class CLI
   end
 
   def start
+    Scraper.new.scrape_names
     puts ""
     puts "Would you like to find out who the top 10 soccer players are? Enter Y for 'yes' or N for 'no'."
 
     input = gets.strip.downcase
 
     if input == "y"
-      puts BestPlayers.new.name
+      BestPlayers.all.each.with_index(1) {
+        |player, index| puts "#{index}. #{player.name}"
+      }
 
       after_input
     elsif input == "n"
