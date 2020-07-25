@@ -36,15 +36,23 @@ class CLI
     puts ""
     puts "Remember: do not copy the exact format that was listed for the command to work! (Ex: Type in '1' instead of '1.')"
 
-    input = gets.strip.to_s
+    input = gets.strip.to_i
 
-    BestPlayers.all.each.with_index(1){
-      |player, index|
-      if input == index.to_s
-        puts "#{player.name}"
-        puts "#{player.description}"
-      end
-    }
+    BestPlayers.all[input.to_i]
+    if input > 0 && input <= BestPlayers.all.length
+      puts BestPlayers.all[input - 1].name
+      puts BestPlayers.all[input - 1].description
+    else
+      puts "Invalid"
+    end
+
+    # BestPlayers.all.each.with_index(1){
+    #   |player, index|
+    #   if input == index.to_s
+    #     puts "#{player.name}"
+    #     puts "#{player.description}"
+    #   end
+    # }
 
 
     # if input == "1"
